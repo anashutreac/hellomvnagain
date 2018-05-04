@@ -17,8 +17,10 @@ pipeline {
              steps {
                 /* sh 'mvn clean install' */
                 sh 'mvn install -DskipTests'
-                version = sh(returnStdout: true, script: 'mvn help:evaluate -Dexpression=project.version | grep -e "^[^[]" ')
-                sh 'echo version'
+                 script {
+                    version = sh(returnStdout: true, script: 'mvn help:evaluate -Dexpression=project.version | grep -e "^[^[]" ')
+                 }
+               echo version
             }
         }
 
