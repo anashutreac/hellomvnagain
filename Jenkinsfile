@@ -32,6 +32,7 @@ pipeline {
              steps {
                 /* sh 'mvn clean install' */
                 sh 'mvn test'
+                echo version
             }
         }
 
@@ -39,6 +40,7 @@ pipeline {
              steps {
                 /* sh 'mvn clean install' */
                 sh 'mvn package'
+                echo version
             }
         }
     }
